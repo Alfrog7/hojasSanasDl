@@ -6,10 +6,10 @@ try:
     model_path = 'app/ml/modelo_final_con_validacion'
     model = tf.saved_model.load(model_path)
 
-    # Obtenemos la firma de inferencia por defecto del modelo
+
     inference_signature = model.signatures['serving_default']
 
-    # Imprimimos las especificaciones del primer tensor de entrada
+
     input_tensor_spec = inference_signature.inputs[0]
 
     print(f"Nombre de la entrada: {input_tensor_spec.name}")

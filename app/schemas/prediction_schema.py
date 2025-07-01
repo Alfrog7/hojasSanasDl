@@ -1,8 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-# Los esquemas de Pydantic definen la forma de los datos que se envían a y desde la API.
-# Proporcionan validación de tipos de datos y serialización.
 
 class PredictionBase(BaseModel):
     """
@@ -31,6 +29,5 @@ class Prediction(PredictionBase):
     created_at: datetime
 
     class Config:
-        # Permite a Pydantic leer los datos directamente desde un objeto de SQLAlchemy (ORM).
-        # Sin esto, no podría mapear el modelo de la BD al esquema de la API.
+    
         from_attributes = True

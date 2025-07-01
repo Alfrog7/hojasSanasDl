@@ -7,9 +7,8 @@ class Settings(BaseSettings):
     """
     DATABASE_URL: str
 
-    # Carga la configuración desde un archivo .env
+
     model_config = SettingsConfigDict(env_file=".env")
 
 
-# Creamos una única instancia de la configuración para ser usada en toda la aplicación.
 settings = Settings()

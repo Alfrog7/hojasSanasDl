@@ -25,10 +25,9 @@ async def run_prediction(
             detail="El archivo subido no es una imagen."
         )
 
-    # --- LÍNEA CORREGIDA ---
-    # Ahora pasamos el objeto 'file' completo, que es lo que el servicio espera.
+
     prediction_result = prediction_service.create_new_prediction(db=db, file=file)
-    # -----------------------
+
 
     if not prediction_result:
         raise HTTPException(
